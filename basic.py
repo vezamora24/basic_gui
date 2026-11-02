@@ -26,5 +26,19 @@ label3.config(bg= "grey", fg = "white", font = ("Courier", 15),
               borderwidth = 5, pady = 5, padx = 5, relief = "solid")
 label3.place(y = 520)
 
+languages = ["python", "java", "c++", "javascript", "c#"]
+
+def btn_lang (lang = "no lang"):
+    #print(lang)
+    label3.config(text = lang)
+
+for i in range(len(languages)):
+    lang_text = languages[i]
+    btn = tk.Button(root, text = lang_text.upper(), width = 100,
+                        command = lambda l = lang_text: btn_lang(l))
+    btn.config(bg = "green", fg = "white", font = ("Courier", 15),
+                relief="ridge", borderwidth=2, pady = 10, padx = 10)
+    btn.pack(pady = 10)
+
 root.mainloop()
 
